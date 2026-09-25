@@ -1,0 +1,12 @@
+{
+  "stage": "formal_teacher_v1",
+  "seeds": [11, 22, 33],
+  "num_envs": 512,
+  "perturb_reset": true,
+  "epochs_per_level": [300, 450, 400, 1100],
+  "validation_count": 100,
+  "promotion_threshold": 0.85,
+  "final_threshold": 0.95,
+  "selection": "Last checkpoint at the fixed budget; last three ten-epoch snapshots must pass the curriculum gate. Stop on failure; no automatic budget extension or best-checkpoint substitution.",
+  "film_seed": 11
+}

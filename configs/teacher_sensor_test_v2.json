@@ -1,0 +1,27 @@
+{
+  "stage": "teacher_sensor_test_supplement_v2",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "split": "test",
+  "episodes_per_condition": 100,
+  "conditions": [
+    "delay_40ms",
+    "depth_loss_3"
+  ],
+  "checkpoint_pattern": "checkpoints/teacher_formal_v2_seed{seed}_l3/final.pth",
+  "baseline_observation_delay_steps": 0,
+  "extra_observation_delay_steps": 2,
+  "current_known_command_indices": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "depth_loss_interpretation": "Teacher has no depth input: record the declared cases as input-unaffected controls and report N/A for visual robustness.",
+  "selection": "Exact final fixed-budget teacher checkpoints; no policy tuning after final tests.",
+  "matrix": "formal_matrix_v2",
+  "test_prefix": "formal_v2_test"
+}

@@ -1,0 +1,56 @@
+params:
+  seed: 11
+  algo: {name: a2c_continuous}
+  model: {name: continuous_a2c_logstd}
+  network:
+    name: actor_critic
+    separate: false
+    space:
+      continuous:
+        mu_activation: 'None'
+        sigma_activation: 'None'
+        mu_init: {name: default}
+        sigma_init: {name: const_initializer, val: -0.7}
+        fixed_sigma: true
+    mlp:
+      units: [256, 256, 256]
+      activation: elu
+      d2rl: false
+      initializer: {name: default}
+  config:
+    name: teacher_seed11
+    env_name: visual_gap
+    env_config: {}
+    device: cuda:0
+    device_name: cuda:0
+    multi_gpu: false
+    mixed_precision: false
+    normalize_input: true
+    normalize_value: true
+    normalize_advantage: true
+    reward_shaper: {scale_value: 1.0}
+    gamma: 0.99
+    tau: 0.95
+    ppo: true
+    learning_rate: 0.0003
+    lr_schedule: adaptive
+    kl_threshold: 0.016
+    grad_norm: 1.0
+    truncate_grads: true
+    entropy_coef: 0.0
+    e_clip: 0.2
+    clip_value: true
+    bounds_loss_coef: 0.0001
+    critic_coef: 2
+    num_actors: 512
+    horizon_length: 32
+    minibatch_size: 4096
+    mini_epochs: 4
+    max_epochs: 1000
+    save_best_after: 1
+    save_frequency: 10
+    score_to_win: 100000
+    games_to_track: 200
+    value_bootstrap: false
+    print_stats: true
+    player: {deterministic: true, games_num: 100, render: false}

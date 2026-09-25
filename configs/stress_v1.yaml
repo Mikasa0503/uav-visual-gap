@@ -1,0 +1,26 @@
+version: stress_v1
+policy_hz: 50
+baseline_sensor_delay_ms: 20
+conditions:
+  show: {geometry: fixed}
+  heldout: {geometry: predeclared_heldout}
+  delay_40ms: {additional_delay_steps: 2}
+  depth_loss_3:
+    acquisition_start_step: 50
+    missing_acquisitions: 3
+    handling: hold_last_depth
+    proprioception_continues: true
+  mass_plus20:
+    physical_mass_and_inertia_scale: 1.2
+    policy_thrust_scale: nominal
+    rate_controller_inertia: nominal
+    initial_motor_thrust: nominal_hover
+  lateral_impulse:
+    before_action_step: 50
+    world_impulse_ns: [0, 0.1, 0]
+    delivered_once: true
+notes:
+  - Conditions are separate and use the existing frozen scenario manifest.
+  - Step 50 corresponds to 1.0 seconds from reset.
+  - Delivery delay also delays when held depth becomes visible to the policy.
+  - Finished episodes do not receive the impulse.

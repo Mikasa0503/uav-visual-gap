@@ -1,0 +1,37 @@
+{
+  "seed": 43022026,
+  "purpose": "Nominal fixed film scenario, not a statistical evaluation",
+  "definition": "configs/task.yaml",
+  "definition_sha256": "78870278d2e70c6008e91f7a390d14a3b94a5ed682d98780879257e74dcc9cd7",
+  "scenarios": [
+    {
+      "id": "showcase_nominal",
+      "condition": "show",
+      "gate_center": [
+        0,
+        0,
+        1.5
+      ],
+      "geometry": [
+        0.66,
+        0.24,
+        45
+      ],
+      "start": [
+        -3,
+        0,
+        1.5
+      ],
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "goal": [
+        2,
+        0,
+        1.5
+      ]
+    }
+  ]
+}

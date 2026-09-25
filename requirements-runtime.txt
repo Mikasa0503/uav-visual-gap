@@ -1,0 +1,9 @@
+# Direct pip layer; the tested Torch/CUDA stack comes from the Conda lock.
+numpy==1.23.0
+warp-lang==1.0.0
+gymnasium==0.28.1
+gym==0.23.1
+rl-games==1.6.1
+sample-factory==2.1.1
+matplotlib==3.7.5
+ninja==1.13.2

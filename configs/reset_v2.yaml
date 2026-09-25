@@ -1,0 +1,13 @@
+version: reset_v2
+enabled_by: --perturb-reset
+initial_rpy_degrees_uniform:
+  lower: [-8, -8, -10]
+  upper: [8, 8, 10]
+initial_world_angular_velocity_rad_s_uniform:
+  lower: [-0.25, -0.25, -0.25]
+  upper: [0.25, 0.25, 0.25]
+retains_position_velocity_and_aperture_randomization: true
+evaluation_explicit_scenarios_override_resets: true
+notes:
+  - Earlier curriculum pilots used upright zero-rate reset protocol v1.
+  - Formal runs must pass --perturb-reset and report the protocol version.

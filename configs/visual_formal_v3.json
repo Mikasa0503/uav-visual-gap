@@ -1,0 +1,50 @@
+{
+  "stage": "formal_visual_v3",
+  "rounds": 10,
+  "labels_per_round": [
+    16384,
+    16384,
+    16384,
+    16384,
+    16384,
+    16384,
+    16384,
+    16384,
+    32768,
+    32768
+  ],
+  "updates_per_round": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    2000,
+    2000
+  ],
+  "learning_rates": [
+    0.0003,
+    0.0003,
+    0.0003,
+    0.0003,
+    0.0003,
+    0.0003,
+    0.0001,
+    0.0001,
+    0.0001,
+    0.0001
+  ],
+  "batch_size": 8,
+  "save_every": 50,
+  "num_envs": 16,
+  "observation_delay_steps": 1,
+  "perturb_reset": true,
+  "validation_count": 100,
+  "freeze_sources": true,
+  "pilot_basis": "Final fixed-budget pilot: 196608 labels, 12000 updates, show 98/100, heldout 88/100. Test manifests have not been evaluated.",
+  "selection": "Final fixed-budget checkpoint for every group and seed; no best-snapshot or best-seed substitution.",
+  "teacher_curriculum": "configs/teacher_formal_v3.json"
+}

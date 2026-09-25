@@ -1,0 +1,20 @@
+# Human-readable Conda baseline. For the tested Linux x86_64 package set use
+# configs/conda-linux-64.explicit.lock; pip/local installs are handled separately.
+name: uav_gap
+channels: [pytorch3d, pytorch, nvidia, conda-forge]
+dependencies:
+  - python=3.8
+  - pip
+  - numpy=1.23.0
+  - pytorch=2.1.0
+  - torchvision=0.16.0
+  - pytorch-cuda=12.1
+  - pytorch3d=0.7.5
+  - scipy=1.10.1
+  - urdfpy=0.0.22
+  - networkx=3.1
+  - pyyaml
+  - pytest
+  - ninja=1.13.2
+  - tensorboardx
+  - colorlog

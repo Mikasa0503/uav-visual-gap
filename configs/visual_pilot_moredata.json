@@ -1,0 +1,31 @@
+{
+  "stage": "pilot_extension",
+  "parent_experiment": "runs/experiments/visual_pilot_lowrate_seed11_dagger_gru",
+  "rounds": 2,
+  "start_round": 8,
+  "labels_per_round": 32768,
+  "updates_per_round": 2000,
+  "batch_size": 8,
+  "save_every": 50,
+  "num_envs": 16,
+  "observation_delay_steps": 1,
+  "perturb_reset": true,
+  "validation_count": 100,
+  "initial_checkpoint": "checkpoints/visual_pilot_lowrate_seed11_dagger_gru_r7/final.pth",
+  "initial_unique_labels": 131072,
+  "initial_updates": 8000,
+  "initial_datasets": [
+    "datasets/visual_pilot_v1_seed11_shared_r0",
+    "datasets/visual_pilot_v1_seed11_dagger_gru_r1",
+    "datasets/visual_pilot_v1_seed11_dagger_gru_r2",
+    "datasets/visual_pilot_v1_seed11_dagger_gru_r3",
+    "datasets/visual_pilot_extension_seed11_dagger_gru_r4",
+    "datasets/visual_pilot_extension_seed11_dagger_gru_r5",
+    "datasets/visual_pilot_lowrate_seed11_dagger_gru_r6",
+    "datasets/visual_pilot_lowrate_seed11_dagger_gru_r7"
+  ],
+  "learning_rates": [
+    0.0001,
+    0.0001
+  ]
+}

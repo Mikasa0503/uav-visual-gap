@@ -1,0 +1,4 @@
+proxy_servers:
+  http: ""
+  https: ""
+ssl_verify: true

@@ -1,0 +1,24 @@
+name: inclined_gap_v1
+physics_hz: 200
+policy_hz: 50
+depth_resolution: [64, 64]
+max_episode_seconds: 8
+vehicle_half_size: [0.23, 0.23, 0.06]
+wall_thickness: 0.05
+show_scene:
+  gate_center: [0, 0, 1.5]
+  geometry: [0.66, 0.24, 45]
+  start: [-3, 0, 1.5]
+  velocity: [0, 0, 0]
+  goal: [2, 0, 1.5]
+geometry_frozen_after: feasibility_03
+feasibility_note: Scripted physical feasibility only, not learned behavior.
+seeds:
+  training: [11, 22, 33]
+  validation: 22092026
+  test: 23092026
+success:
+  goal_radius_m: 0.3
+  speed_max_m_s: 0.3
+  tilt_max_deg: 10
+  hold_seconds: 0.5

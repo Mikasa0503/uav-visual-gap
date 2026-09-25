@@ -1,0 +1,32 @@
+{
+  "version": "v3",
+  "matrix": "formal_matrix_v3",
+  "supplement": "teacher_sensor_test_v3",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "groups": [
+    "teacher",
+    "bc_gru",
+    "dagger_gru",
+    "dagger_stack4"
+  ],
+  "conditions": [
+    "show",
+    "heldout",
+    "delay_40ms",
+    "depth_loss_3",
+    "mass_plus20",
+    "lateral_impulse"
+  ],
+  "episode_index": 0,
+  "selection": "The first frozen test episode of every group/seed/condition, regardless of outcome.",
+  "expected_clips": 72,
+  "width": 1280,
+  "samples": 12,
+  "workers": 4,
+  "threads_per_worker": 16,
+  "timing": "25fps, complete sampled episode at original speed; no holds or excerpts."
+}

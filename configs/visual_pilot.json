@@ -1,0 +1,12 @@
+{
+  "stage": "pilot",
+  "rounds": 4,
+  "labels_per_round": 16384,
+  "updates_per_round": 1000,
+  "batch_size": 8,
+  "save_every": 50,
+  "num_envs": 16,
+  "observation_delay_steps": 1,
+  "perturb_reset": true,
+  "validation_count": 100
+}

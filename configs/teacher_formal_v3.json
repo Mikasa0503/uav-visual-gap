@@ -1,0 +1,77 @@
+{
+  "stage": "formal_teacher_v3",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "num_envs": 512,
+  "perturb_reset": true,
+  "validation_count": 100,
+  "promotion_threshold": 0.85,
+  "final_threshold": 0.95,
+  "selection": "Last checkpoint at the fixed budget; last three ten-epoch snapshots must pass the curriculum gate. Stop on failure; no automatic budget extension or best-checkpoint substitution.",
+  "film_seed": 11,
+  "phases": [
+    {
+      "tag": "l0_warmup",
+      "level": 0,
+      "epochs": 300,
+      "perturb_reset": false,
+      "promotion_check": false,
+      "exact_final": false
+    },
+    {
+      "tag": "l0",
+      "level": 0,
+      "epochs": 300,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l1_warmup",
+      "level": 1,
+      "epochs": 150,
+      "perturb_reset": false,
+      "promotion_check": false,
+      "exact_final": false
+    },
+    {
+      "tag": "l1",
+      "level": 1,
+      "epochs": 300,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l2",
+      "level": 2,
+      "epochs": 400,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l3_nominal",
+      "level": 3,
+      "epochs": 600,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l3",
+      "level": 3,
+      "epochs": 500,
+      "perturb_reset": true,
+      "promotion_check": true,
+      "exact_final": true
+    }
+  ],
+  "revision_reason": "V2 seed22 failed recovery at300epochs. A separate original-reward continuation passed100/100 at580/590/600epochs; dense-cost diagnostics failed all-seed stability and are not adopted. V3 uses original reward and identical300+300epoch l0 phases for every seed from scratch,2550epochs total. Geometry, success gates, final test manifests and student budgets remain unchanged. Failed V1/V2 and all diagnostics are preserved.",
+  "recovery_reward": "original",
+  "revision_evidence": "runs/experiments/teacher_recovery_budget_diagnostic_seed22_l0/complete.json",
+  "revision_evidence_sha256": "842f2ae852cd12e2ed51bcaaff5073cb55c5a38b352649d063668f096ff17a99"
+}

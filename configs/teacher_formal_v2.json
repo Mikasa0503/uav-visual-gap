@@ -1,0 +1,66 @@
+{
+  "stage": "formal_teacher_v2",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "num_envs": 512,
+  "perturb_reset": true,
+  "validation_count": 100,
+  "promotion_threshold": 0.85,
+  "final_threshold": 0.95,
+  "selection": "Last checkpoint at the fixed budget; last three ten-epoch snapshots must pass the curriculum gate. Stop on failure; no automatic budget extension or best-checkpoint substitution.",
+  "film_seed": 11,
+  "phases": [
+    {
+      "tag": "l0",
+      "level": 0,
+      "epochs": 300,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l1_warmup",
+      "level": 1,
+      "epochs": 150,
+      "perturb_reset": false,
+      "promotion_check": false,
+      "exact_final": false
+    },
+    {
+      "tag": "l1",
+      "level": 1,
+      "epochs": 300,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l2",
+      "level": 2,
+      "epochs": 400,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l3_nominal",
+      "level": 3,
+      "epochs": 600,
+      "perturb_reset": false,
+      "promotion_check": true,
+      "exact_final": false
+    },
+    {
+      "tag": "l3",
+      "level": 3,
+      "epochs": 500,
+      "perturb_reset": true,
+      "promotion_check": true,
+      "exact_final": true
+    }
+  ],
+  "revision_reason": "Formal v1 stopped: wide-gate epochs 280/290/300 each scored 0/100; final evaluation crossed 100/100 but all recovery attempts timed out. V2 uses the successful pilot reset curriculum for every seed, from scratch. Final geometry, reset-v2 training/data, success thresholds and total 2250 epochs are unchanged."
+}
